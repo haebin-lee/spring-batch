@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 @RequiredArgsConstructor
 @Configuration
-public class SimpleJobConfiguration {
+public class _1SimpleJobConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
@@ -32,10 +32,10 @@ public class SimpleJobConfiguration {
     public Step simpleStep1(@Value("#{jobParameters[requestDate]}")String requestDate) {
         return stepBuilderFactory.get("simpleStep1")
                 .tasklet((contribution, chunkContext) -> {
-//                    log.info(">>>>> This is Step1");
-//                    log.info(">>>>> requestDate = {}", requestDate);
-//                    return RepeatStatus.FINISHED;
-                     throw new IllegalArgumentException("Failed at Step1");
+                    log.info(">>>>> This is Step1");
+                    log.info(">>>>> requestDate = {}", requestDate);
+                    return RepeatStatus.FINISHED;
+//                     throw new IllegalArgumentException("Failed at Step1");
                 })
                 .build();
     }
