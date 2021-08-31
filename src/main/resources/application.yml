@@ -27,7 +27,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         format_sql: true
-        show-sql: true
+        shoq_sql: true
 ---
 spring:
   profiles: mysql
@@ -41,4 +41,4 @@ spring:
     properties:
       hibernate:
         format_sql: true
-        show-sql: true
+        show_sql: true
